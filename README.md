@@ -17,3 +17,21 @@ A lightweight, multi-threaded DNS server implemented in Python. This project sup
 Install the required Python dependency:
 ```bash
 pip install dnslib
+
+Clone the repository:
+git clone [https://github.com/AvinashMJ8668/LIGHT_DNS_SERVER.git](https://github.com/AvinashMJ8668/LIGHT_DNS_SERVER.git)
+cd LIGHT_DNS_SERVER
+
+Generate SSL/TLS Certificates:
+For security reasons, the private keys and certificates are not included in this repository. You must generate your own self-signed certificates to run the TLS server. Run the following OpenSSL command in the project root:
+openssl req -x509 -newkey rsa:4096 -keyout key.pem -out cert.pem -days 365 -nodes
+
+1. Start the Server:
+Run main.py with administrator/root privileges (required to bind to port 53 and 853):
+sudo python main.py
+On Windows, open your command prompt or terminal as Administrator and run python main.py
+
+2. Run the Interactive Client:
+python test_client.py
+
+
